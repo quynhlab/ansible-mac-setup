@@ -110,10 +110,10 @@
         state: present
         update_homebrew: yes
 
-    - name: "Install from Mac app store"
-      shell: mas install {{ item }}
-      with_items:
-        - 497799835 # xcode
+    # - name: "Install from Mac app store"
+    #   shell: mas install {{ item }}
+    #   with_items:
+    #     - 497799835 # xcode
 
     - name: Obtain path to SSH
       become: false
