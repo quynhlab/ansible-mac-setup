@@ -16,8 +16,8 @@
 
 - name: Create config 
   template:
-    src: dnsmasq.conf.j2
-    dest: "{{  config_directory.stdout | trim }}/dnsmasq.conf"
+    src: mo.conf.j2
+    dest: "{{  config_directory.stdout | trim }}/mo.conf"
 
 - name: Create resolvers directory 
   file:
@@ -33,4 +33,4 @@
 
 - name: Notes
   debug:
-    msg: "Remember must be started with sudo, e.g. sudo brew services start dnsmasq"
+    msg: "Sudo needs to be used, e.g. sudo brew services start dnsmasq"
