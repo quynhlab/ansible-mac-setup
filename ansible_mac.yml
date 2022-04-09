@@ -26,7 +26,6 @@
         name: "{{ item }}"
       ignore_errors: yes
       with_items:
-        - 1password
         - visual-studio-code
         - vlc
         - postman
@@ -37,7 +36,8 @@
         - google-chrome
         - google-cloud-sdk
         - iterm2
-        - slack
+        - 1password
+        - slack      
 
     - name: Install packages using homebrew
       community.general.homebrew:
@@ -110,10 +110,11 @@
         state: present
         update_homebrew: yes
 
-    # - name: "Install from Mac app store"
-    #   shell: mas install {{ item }}
-    #   with_items:
-    #     - 497799835 # xcode
+    - name: Install tools from App store (assuming you're logged in)
+      shell: mas install {{ item }}
+      with_items:
+        - 497799835 # xcode
+        - 1295203466 # microsoft remote desktop
 
     - name: Obtain path to SSH
       become: false
