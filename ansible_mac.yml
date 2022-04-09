@@ -5,7 +5,7 @@
       include_role:
         name: geerlingguy.mac.homebrew
 
-    - name: Make sure homebrew bin is in path
+    - name: Ensuring homebrew binary is in path
       ansible.builtin.lineinfile:
         path: /etc/paths
         state: present
@@ -13,7 +13,7 @@
       become: true
       become_user: root
 
-    - name: 'add custom homebrew repos'
+    - name: Adding custom homebrew repos
       community.general.homebrew_tap:
         name: [
           adoptopenjdk/openjdk,
