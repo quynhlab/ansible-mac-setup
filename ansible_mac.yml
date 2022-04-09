@@ -24,7 +24,7 @@
           weaveworks/tap,
         ]
 
-    - name: Install core packages via brew casks
+    - name: Installing main packages using brew casks
       community.general.homebrew_cask:
         name: "{{ item }}"
       ignore_errors: yes
@@ -33,6 +33,7 @@
         - android-sdk
         - visual-studio-code
         - vlc
+        - postman
         - zoom
         - android-studio
         - docker
@@ -42,7 +43,7 @@
         - slack
         - sublime-text
 
-    - name: "Install homebrew packages"
+    - name: Install packages using homebrew
       community.general.homebrew:
         name: [
           'autoconf',
