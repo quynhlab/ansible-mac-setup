@@ -8,7 +8,9 @@ I created a simple shell script in `binaries/bootstrap.sh` which will perform th
 
 ## What am I installing
 
-- Everything located in ```ansible-osx.yml```
+- Everything located in ```ansible_mac.yml```
+
+Tools to be installed: 
 
 - ZSH + Oh My Zsh as the primary shell
 - Homebrew for package management
@@ -21,4 +23,3 @@ I created a simple shell script in `binaries/bootstrap.sh` which will perform th
 ## How can I customise? 
 
 Everything can be customised by editing `ansible_osx.yml`.
-
