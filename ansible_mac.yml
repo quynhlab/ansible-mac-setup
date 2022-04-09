@@ -202,7 +202,7 @@
         owner: "{{ lookup('env', 'USER') }}"
         force: yes
 
-    - name: "Install asdf plugins"
+    - name: Install asdf plugins
       shell: |
         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
         asdf plugin-add {{ item }} || exit 0
@@ -211,7 +211,7 @@
         - nodejs
         - golang
 
-    - name: "Install Default Python"
+    - name: Install Default Python
       shell: |
         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
         asdf install python 3.10.0
@@ -219,7 +219,7 @@
         pip3 install ansible
         asdf reshim python
 
-    # - name: "Install default node"
+    # - name: Install node default 
     #   shell: |
     #     source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
     #     bash /Users/{{ lookup('env', 'USER') }}/.asdf/plugins/nodejs/bin/import-release-team-keyring
