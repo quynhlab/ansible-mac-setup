@@ -4,7 +4,21 @@ This is my personal Ansible configuration for setting up a DevOps Mac setup from
 
 ## How to install
 
-I created a simple shell script in `binaries/bootstrap.sh` which will perform the initial steps of automating. 
+I created a simple shell script in `scripts/prepare.sh` which will perform the initial steps of automating.
+
+```
+
+xcode-select --install
+sudo xcodebuild -license
+/usr/sbin/softwareupdate --install-rosetta
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+sudo pip3 install --ignore-installed ansible
+ansible-galaxy install -r requirements.yml
+
+ansible-playbook -i "localhost," -c local ansible_mac.yml --ask-become-pass
+
+```
 
 ## What am I installing
 
@@ -13,12 +27,10 @@ I created a simple shell script in `binaries/bootstrap.sh` which will perform th
 Tools to be installed: 
 
 - ZSH + Oh My Zsh as the primary shell
-- Homebrew for package management
-- ASDF for version management (along with plugins and default versions for ruby, python, javascript, elixir and erlang)
-- Virtualbox, Vagrant and Docker
+- Homebrew + all my default CLI tools
+- ASDF for version management: Golang, JS, Python
+- Docker & Rancher
 - VSCode + default plugins and configuration
-- A selection of Android SDK's
-- Lots of other tools and utilities
 
 ## How can I customise? 
 

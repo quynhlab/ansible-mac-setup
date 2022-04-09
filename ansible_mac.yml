@@ -141,21 +141,21 @@
       shell: chsh -s $(which zsh) {{ lookup('env', 'USER') }}
       become: true
 
-    - name: "Create a default ZSH configuration"
+    - name: Create my default ZSH config
       template:
         src: templates/.zshrc.j2
         dest: /Users/{{ lookup('env', 'USER') }}/.zshrc
         owner: "{{ lookup('env', 'USER') }}"
         force: yes
 
-    - name: Create a default VSCode configuration
+    - name: Create my VSCode config
       template:
         src: templates/vscode-settings.json.j2
         dest: /Users/{{ lookup('env', 'USER') }}/Library/Application Support/Code/User/settings.json
         owner: "{{ lookup('env', 'USER') }}"
         force: yes
 
-    - name: Create a default VSCode keuybinding configuration
+    - name: Create my VSCode keybinding config
       template:
         src: templates/vscode-keybindings.json.j2
         dest: /Users/{{ lookup('env', 'USER') }}/Library/Application Support/Code/User/keybindings.json
@@ -163,27 +163,36 @@
         force: yes
 
     # Add something which ensures path is set here
-    - name: Install VSCode extensions
+    - name: Install my VSCode extensions
       shell: code --install-extension {{ item }}
       with_items:
         - apollographql.vscode-apollo
-        - bradlc.vscode-tailwindcss
-        - castwide.solargraph
-        - clinyong.vscode-css-modules
         - eamodio.gitlens
-        - jakebecker.elixir-ls
-        - kaiwood.endwise
-        - karunamurti.haml
+        - Boto3typed.boto3-ide
+        - golang.go
+        - formulahendry.code-runner
+        - ecmel.vscode-html-css
+        - caarlos0.language-prometheus
+        - hashicorp.terraform
+        - AquaSecurityOfficial.trivy-vulnerability-scanner
+        - GitHub.vscode-pull-request-github
+        - DavidAnson.vscode-markdownlint
         - ms-vscode-remote.vscode-remote-extensionpack
         - ms-vscode.vscode-typescript-tslint-plugin
         - msjsdiag.debugger-for-chrome
-        - rebornix.ruby
         - richie5um2.vscode-sort-json
         - Tyriar.sort-lines
+        - ms-azuretools.vscode-docker
+        - ms-vscode-remote.remote-ssh
+        - ms-vscode.cpptools-themes
+        - ms-kubernetes-tools.vscode-kubernetes-tools
+        - ms-python.python
+        - redhat.ansible
+        - tomaciazek.ansible
+        - kiteco.kite
+        - mhutchie.git-graph
         - vscodevim.vim
         - wholroyd.jinja
-        - wingrunr21.vscode-ruby
-        - xabikos.javascriptsnippets
         - streetsidesoftware.code-spell-checker
         - fabiospampinato.vscode-todo-plus
 
@@ -204,11 +213,9 @@
         source /Users/{{ lookup('env', 'USER') }}/.asdf/asdf.sh
         asdf plugin-add {{ item }} || exit 0
       with_items:
-        - ruby
-        - elixir
-        - nodejs
         - python
-        - erlang
+        - nodejs
+        - golang
 
     - name: "Install Default Python"
       shell: |
