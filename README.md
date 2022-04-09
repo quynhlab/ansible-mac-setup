@@ -4,7 +4,7 @@ This is my personal Ansible configuration for setting up a DevOps Mac setup from
 
 ## How to install
 
-There's a simple shell script in `bin/bootstrap` which will perform the initial steps of automating. 
+I created a simple shell script in `binaries/bootstrap.sh` which will perform the initial steps of automating. 
 
 ## What am I installing
 
