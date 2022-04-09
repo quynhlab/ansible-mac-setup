@@ -27,20 +27,17 @@
       ignore_errors: yes
       with_items:
         - 1password
-        - android-sdk
         - visual-studio-code
         - vlc
         - postman
         - notion
         - rancher-desktop
         - zoom
-        - android-studio
         - docker
         - google-chrome
         - google-cloud-sdk
         - iterm2
         - slack
-        - sublime-text
 
     - name: Install packages using homebrew
       community.general.homebrew:
