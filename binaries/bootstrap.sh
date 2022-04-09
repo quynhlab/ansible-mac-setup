@@ -1,5 +1,6 @@
 #!/bin/sh
 
+## Installing Ansible + required items
 
 xcode-select --install
 sudo xcodebuild -license
