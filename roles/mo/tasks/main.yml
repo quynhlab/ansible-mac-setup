@@ -31,6 +31,6 @@
     dest: /etc/resolver/localhost
   become: true
 
-- name: Notes
-  debug:
-    msg: "Sudo needs to be used, e.g. sudo brew services start dnsmasq"
+# - name: Note
+#   debug:
+#     msg: "Sudo needs to be used, e.g. sudo brew services start dnsmasq"

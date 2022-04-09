@@ -121,7 +121,7 @@
       with_items:
         - 497799835 # xcode
 
-    - name: Get the path to ZSH
+    - name: Obtain path to SSH
       become: false
       local_action: command which zsh
       register: zsh_path
