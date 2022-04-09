@@ -155,9 +155,9 @@
         owner: "{{ lookup('env', 'USER') }}"
         force: yes
 
-    - name: Create my VSCode keybinding config
+    - name: Create my VSCode key shortcuts  config
       template:
-        src: templates/vscode-keybindings.json.j2
+        src: templates/vscode-keys.json.j2
         dest: /Users/{{ lookup('env', 'USER') }}/Library/Application Support/Code/User/keybindings.json
         owner: "{{ lookup('env', 'USER') }}"
         force: yes
