@@ -2,11 +2,11 @@
 
 This is my personal Ansible configuration for setting up a DevOps Mac setup from scratch.
 
-## How to install
+## How to install & Pre-reqs
 
-I created a simple shell script in `scripts/prepare.sh` which will perform the initial steps of automating.
+I created a simple shell script in `scripts/prepare.sh` which will perform the initial steps of automating. This also installs pre-requisites like Ansible. 
 
-Once pre-requisites are complete - you may install using ```scripts/apply.sh```
+Once pre-requisites are complete - you may install using ```scripts/apply.sh```. This runs ```ansible-playbook -i "localhost," -c local ansible_mac.yml --ask-become-pass``` in the background installing all the tools with Ansible. 
 
 ## What am I installing
 
