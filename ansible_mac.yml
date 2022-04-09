@@ -127,16 +127,16 @@
         line: "{{ zsh_path.stdout }}"
       become: true
 
-    - name: Install Oh My ZSH
+    - name: Install Oh My Zsh
       shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
       args:
         creates: "/Users/{{ lookup('env', 'USER') }}/.oh-my-zsh"
 
-    - name: Set ZSH as the default shell
+    - name: Set zsh as the default shell
       shell: chsh -s $(which zsh) {{ lookup('env', 'USER') }}
       become: true
 
-    - name: Create my default ZSH config
+    - name: Create my default zsh config
       template:
         src: templates/.zshrc.j2
         dest: /Users/{{ lookup('env', 'USER') }}/.zshrc
@@ -150,7 +150,7 @@
         owner: "{{ lookup('env', 'USER') }}"
         force: yes
 
-    - name: Create my VSCode key shortcuts  config
+    - name: Create my VSCode key shortcuts config
       template:
         src: templates/vscode-keys.json.j2
         dest: /Users/{{ lookup('env', 'USER') }}/Library/Application Support/Code/User/keybindings.json
@@ -226,6 +226,3 @@
     #     bash /Users/{{ lookup('env', 'USER') }}/.asdf/plugins/nodejs/bin/import-release-team-keyring
     #     asdf install nodejs 16.4.2
     #     asdf global nodejs 16.4.2
-        
-    # - name: re-generate bins now we've installed some yarn packages
-    #   shell: asdf reshim nodejs
