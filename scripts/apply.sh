@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "installing all tools"
+echo "Installing all tools"
 
 ansible-playbook -i hosts -c local ansible_mac.yml --ask-become-pass
 
